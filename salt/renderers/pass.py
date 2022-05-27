@@ -89,7 +89,7 @@ def _fetch_secret(pass_path):
     if proc.returncode or not pass_data:
         log.warning("Could not fetch secret: %s %s", pass_data, pass_error)
         pass_data = pass_path
-    return pass_data.strip()
+    return pass_data.rstrip("\r\n")
 
 
 def _decrypt_object(obj):
